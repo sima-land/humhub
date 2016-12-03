@@ -30,3 +30,6 @@ composer_install:
 
 composer_update:
 	docker exec -t humhub_php_1 bash -c "cd /var/www/html/; composer update --no-interaction --prefer-dist;"
+
+dirs:
+	chmod -R a+rw assets uploads protected/runtime protected/runtime/logs protected/modules protected/config
