@@ -29,7 +29,7 @@ CREATE TABLE `activity` (
   `object_model` varchar(100) DEFAULT '',
   `object_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `activity` (
 
 LOCK TABLES `activity` WRITE;
 /*!40000 ALTER TABLE `activity` DISABLE KEYS */;
-INSERT INTO `activity` VALUES (1,'humhub\\modules\\space\\activities\\Created','space','humhub\\modules\\space\\models\\Space',1),(2,'humhub\\modules\\content\\activities\\ContentCreated','content','humhub\\modules\\post\\models\\Post',1),(3,'humhub\\modules\\space\\activities\\MemberAdded','space','humhub\\modules\\space\\models\\Space',1),(4,'humhub\\modules\\space\\activities\\MemberAdded','space','humhub\\modules\\space\\models\\Space',1),(5,'humhub\\modules\\content\\activities\\ContentCreated','content','humhub\\modules\\post\\models\\Post',2),(6,'humhub\\modules\\comment\\activities\\NewComment','comment','humhub\\modules\\comment\\models\\Comment',1),(7,'humhub\\modules\\comment\\activities\\NewComment','comment','humhub\\modules\\comment\\models\\Comment',2),(8,'humhub\\modules\\like\\activities\\Liked','like','humhub\\modules\\like\\models\\Like',1),(9,'humhub\\modules\\like\\activities\\Liked','like','humhub\\modules\\like\\models\\Like',2),(10,'humhub\\modules\\content\\activities\\ContentCreated','content','humhub\\modules\\polls\\models\\Poll',1),(11,'humhub\\modules\\polls\\activities\\NewVote','polls','humhub\\modules\\polls\\models\\Poll',1),(12,'humhub\\modules\\comment\\activities\\NewComment','comment','humhub\\modules\\comment\\models\\Comment',3),(13,'humhub\\modules\\polls\\activities\\NewVote','polls','humhub\\modules\\polls\\models\\Poll',1),(14,'humhub\\modules\\comment\\activities\\NewComment','comment','humhub\\modules\\comment\\models\\Comment',4);
+INSERT INTO `activity` VALUES (1,'humhub\\modules\\space\\activities\\Created','space','humhub\\modules\\space\\models\\Space',1),(2,'humhub\\modules\\content\\activities\\ContentCreated','content','humhub\\modules\\post\\models\\Post',1),(3,'humhub\\modules\\space\\activities\\MemberAdded','space','humhub\\modules\\space\\models\\Space',1),(4,'humhub\\modules\\space\\activities\\MemberAdded','space','humhub\\modules\\space\\models\\Space',1),(5,'humhub\\modules\\content\\activities\\ContentCreated','content','humhub\\modules\\post\\models\\Post',2),(6,'humhub\\modules\\comment\\activities\\NewComment','comment','humhub\\modules\\comment\\models\\Comment',1),(7,'humhub\\modules\\comment\\activities\\NewComment','comment','humhub\\modules\\comment\\models\\Comment',2),(8,'humhub\\modules\\like\\activities\\Liked','like','humhub\\modules\\like\\models\\Like',1),(9,'humhub\\modules\\like\\activities\\Liked','like','humhub\\modules\\like\\models\\Like',2);
 /*!40000 ALTER TABLE `activity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,7 +53,7 @@ CREATE TABLE `cfiles_file` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_folder_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,7 +77,7 @@ CREATE TABLE `cfiles_folder` (
   `parent_folder_id` int(11) DEFAULT NULL,
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,7 +106,7 @@ CREATE TABLE `comment` (
   `updated_at` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,7 +115,7 @@ CREATE TABLE `comment` (
 
 LOCK TABLES `comment` WRITE;
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
-INSERT INTO `comment` VALUES (1,'Nike – Just buy it. ;Wink;','humhub\\modules\\post\\models\\Post',2,'2016-12-05 04:45:27',2,'2016-12-05 04:45:27',2),(2,'Calvin Klein – Between love and madness lies obsession.','humhub\\modules\\post\\models\\Post',2,'2016-12-05 04:45:27',3,'2016-12-05 04:45:27',3),(3,'Why don\'t we go to Bemelmans Bar?','humhub\\modules\\polls\\models\\Poll',1,'2016-12-05 04:45:28',2,'2016-12-05 04:45:28',2),(4,'Again? ;Weary;','humhub\\modules\\polls\\models\\Poll',1,'2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3);
+INSERT INTO `comment` VALUES (1,'Nike – Just buy it. ;Wink;','humhub\\modules\\post\\models\\Post',2,'2016-12-05 04:45:27',2,'2016-12-05 04:45:27',2),(2,'Calvin Klein – Between love and madness lies obsession.','humhub\\modules\\post\\models\\Post',2,'2016-12-05 04:45:27',3,'2016-12-05 04:45:27',3);
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,7 +148,7 @@ CREATE TABLE `content` (
   CONSTRAINT `fk-contentcontainer` FOREIGN KEY (`contentcontainer_id`) REFERENCES `contentcontainer` (`id`) ON DELETE SET NULL,
   CONSTRAINT `fk-create-user` FOREIGN KEY (`created_by`) REFERENCES `user` (`id`) ON DELETE SET NULL,
   CONSTRAINT `fk-update-user` FOREIGN KEY (`updated_by`) REFERENCES `user` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=18;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,7 +157,7 @@ CREATE TABLE `content` (
 
 LOCK TABLES `content` WRITE;
 /*!40000 ALTER TABLE `content` DISABLE KEYS */;
-INSERT INTO `content` VALUES (1,'766670c8-ff65-4db1-b05c-9cf21e209ced','humhub\\modules\\activity\\models\\Activity',1,1,0,'0','2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1,2),(2,'2a90b9f1-9ab6-4e19-8488-38836895b1a1','humhub\\modules\\post\\models\\Post',1,1,0,'0','2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1,2),(3,'9679e07a-1ede-4ba2-b260-39fd0e84a806','humhub\\modules\\activity\\models\\Activity',2,1,0,'0','2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1,2),(4,'c98c6562-54fe-4ff3-8df7-6d210361367b','humhub\\modules\\activity\\models\\Activity',3,0,0,'0','2016-12-05 04:45:26',2,'2016-12-05 04:45:26',1,2),(5,'558c76d4-49c4-4625-8ec6-308092c0e182','humhub\\modules\\activity\\models\\Activity',4,0,0,'0','2016-12-05 04:45:27',3,'2016-12-05 04:45:27',1,2),(6,'d8af7ea4-a07e-430c-bd9c-14220a32ba39','humhub\\modules\\post\\models\\Post',2,0,0,'0','2016-12-05 04:45:27',1,'2016-12-05 04:45:27',1,2),(7,'48af7f21-0b34-47b5-bc16-618df8f9bb27','humhub\\modules\\activity\\models\\Activity',5,0,0,'0','2016-12-05 04:45:27',1,'2016-12-05 04:45:27',1,2),(8,'7c858050-7053-4e83-9186-d639193b5e99','humhub\\modules\\activity\\models\\Activity',6,0,0,'0','2016-12-05 04:45:27',2,'2016-12-05 04:45:27',2,2),(9,'6cff7bd7-862a-41bc-91a5-a3f43f6d7cf7','humhub\\modules\\activity\\models\\Activity',7,0,0,'0','2016-12-05 04:45:27',3,'2016-12-05 04:45:27',3,2),(10,'953556f8-b58b-413b-abad-db038b9aaeb8','humhub\\modules\\activity\\models\\Activity',8,0,0,'0','2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3,2),(11,'33c2f835-04d4-4219-985e-a8109f176f85','humhub\\modules\\activity\\models\\Activity',9,0,0,'0','2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3,2),(12,'f7c05fac-632a-4144-85dd-3be996aec1d1','humhub\\modules\\polls\\models\\Poll',1,0,0,'0','2016-12-05 04:45:28',1,'2016-12-05 04:45:28',1,2),(13,'df38f99b-5a65-4521-8fea-236e7f9519ce','humhub\\modules\\activity\\models\\Activity',10,0,0,'0','2016-12-05 04:45:28',1,'2016-12-05 04:45:28',1,2),(14,'a062ebab-6383-4796-ae1c-cdf050d2f9a3','humhub\\modules\\activity\\models\\Activity',11,0,0,'0','2016-12-05 04:45:28',2,'2016-12-05 04:45:28',2,2),(15,'b0a5ce99-beb2-4291-8c38-f35fa5aaab9e','humhub\\modules\\activity\\models\\Activity',12,0,0,'0','2016-12-05 04:45:28',2,'2016-12-05 04:45:28',2,2),(16,'2b01554b-0cff-4658-a75c-f724ab30aeff','humhub\\modules\\activity\\models\\Activity',13,0,0,'0','2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3,2),(17,'f3c90d46-9476-40ee-a515-0840b41bbd47','humhub\\modules\\activity\\models\\Activity',14,0,0,'0','2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3,2);
+INSERT INTO `content` VALUES (1,'766670c8-ff65-4db1-b05c-9cf21e209ced','humhub\\modules\\activity\\models\\Activity',1,1,0,'0','2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1,2),(2,'2a90b9f1-9ab6-4e19-8488-38836895b1a1','humhub\\modules\\post\\models\\Post',1,1,0,'0','2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1,2),(3,'9679e07a-1ede-4ba2-b260-39fd0e84a806','humhub\\modules\\activity\\models\\Activity',2,1,0,'0','2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1,2),(4,'c98c6562-54fe-4ff3-8df7-6d210361367b','humhub\\modules\\activity\\models\\Activity',3,0,0,'0','2016-12-05 04:45:26',2,'2016-12-05 04:45:26',1,2),(5,'558c76d4-49c4-4625-8ec6-308092c0e182','humhub\\modules\\activity\\models\\Activity',4,0,0,'0','2016-12-05 04:45:27',3,'2016-12-05 04:45:27',1,2),(6,'d8af7ea4-a07e-430c-bd9c-14220a32ba39','humhub\\modules\\post\\models\\Post',2,0,0,'0','2016-12-05 04:45:27',1,'2016-12-05 04:45:27',1,2),(7,'48af7f21-0b34-47b5-bc16-618df8f9bb27','humhub\\modules\\activity\\models\\Activity',5,0,0,'0','2016-12-05 04:45:27',1,'2016-12-05 04:45:27',1,2),(8,'7c858050-7053-4e83-9186-d639193b5e99','humhub\\modules\\activity\\models\\Activity',6,0,0,'0','2016-12-05 04:45:27',2,'2016-12-05 04:45:27',2,2),(9,'6cff7bd7-862a-41bc-91a5-a3f43f6d7cf7','humhub\\modules\\activity\\models\\Activity',7,0,0,'0','2016-12-05 04:45:27',3,'2016-12-05 04:45:27',3,2),(10,'953556f8-b58b-413b-abad-db038b9aaeb8','humhub\\modules\\activity\\models\\Activity',8,0,0,'0','2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3,2),(11,'33c2f835-04d4-4219-985e-a8109f176f85','humhub\\modules\\activity\\models\\Activity',9,0,0,'0','2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3,2);
 /*!40000 ALTER TABLE `content` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,7 +178,7 @@ CREATE TABLE `contentcontainer` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_target` (`class`,`pk`),
   UNIQUE KEY `unique_guid` (`guid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,7 +206,7 @@ CREATE TABLE `contentcontainer_permission` (
   `class` varchar(255) DEFAULT NULL,
   `state` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`permission_id`,`group_id`,`module_id`,`contentcontainer_id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +235,7 @@ CREATE TABLE `contentcontainer_setting` (
   UNIQUE KEY `settings-unique` (`module_id`,`contentcontainer_id`,`name`),
   KEY `fk-contentcontainerx` (`contentcontainer_id`),
   CONSTRAINT `fk-contentcontainerx` FOREIGN KEY (`contentcontainer_id`) REFERENCES `contentcontainer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -269,7 +269,7 @@ CREATE TABLE `file` (
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_object` (`object_model`,`object_id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -302,7 +302,7 @@ CREATE TABLE `group` (
   `show_at_registration` tinyint(1) NOT NULL DEFAULT '1',
   `show_at_directory` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -329,7 +329,7 @@ CREATE TABLE `group_permission` (
   `class` varchar(255) DEFAULT NULL,
   `state` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`permission_id`,`group_id`,`module_id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -362,7 +362,7 @@ CREATE TABLE `group_user` (
   KEY `fk-group-group` (`group_id`),
   CONSTRAINT `fk-group-group` FOREIGN KEY (`group_id`) REFERENCES `group` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk-user-group` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -393,7 +393,7 @@ CREATE TABLE `like` (
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_object` (`object_model`,`object_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -423,7 +423,7 @@ CREATE TABLE `log` (
   PRIMARY KEY (`id`),
   KEY `idx_log_level` (`level`),
   KEY `idx_log_category` (`category`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -432,69 +432,8 @@ CREATE TABLE `log` (
 
 LOCK TABLES `log` WRITE;
 /*!40000 ALTER TABLE `log` DISABLE KEYS */;
-INSERT INTO `log` VALUES (1,1,'yii\\db\\Exception',1480913139.3513,'[172.17.0.1][1][1ic730i7nqjla32627k1dlugf2]','exception \'PDOException\' with message \'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column \'humhub.notification.id\' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:900\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\\db\\Command->queryInternal(\'<span class=\"st...\', \'<span class=\"nu...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(401): yii\\db\\Command->queryScalar()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\\db\\Query->queryScalar(\'<span class=\"st...\', \'<span class=\"ke...\')\n#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(303): yii\\db\\ActiveQuery->queryScalar(\'<span class=\"st...\', \'<span class=\"ke...\')\n#5 /var/www/html/protected/humhub/modules/notification/controllers/ListController.php(108): yii\\db\\Query->count()\n#6 /var/www/html/protected/humhub/modules/notification/widgets/Overview.php(31): humhub\\modules\\notification\\controllers\\ListController::getUpdates()\n#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Widget.php(102): humhub\\modules\\notification\\widgets\\Overview->run()\n#8 /var/www/html/protected/humhub/widgets/BaseStack.php(90): yii\\base\\Widget::widget(\'[]\')\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Widget.php(102): humhub\\widgets\\BaseStack->run()\n#10 /var/www/html/protected/humhub/views/layouts/main.php(101): yii\\base\\Widget::widget(\'[<span class=\"s...\')\n#11 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(326): require(\'/var/www/html/p...\')\n#12 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(248): yii\\base\\View->renderPhpFile(\'<span class=\"st...\', \'[<span class=\"s...\')\n#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(393): yii\\base\\View->renderFile(\'<span class=\"st...\', \'[<span class=\"s...\', Object(humhub\\modules\\dashboard\\controllers\\DashboardController))\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(379): yii\\base\\Controller->renderContent(\'<span class=\"st...\')\n#15 /var/www/html/protected/humhub/modules/dashboard/controllers/DashboardController.php(64): yii\\base\\Controller->render(\'<span class=\"st...\', \'[<span class=\"s...\')\n#16 [internal function]: humhub\\modules\\dashboard\\controllers\\DashboardController->actionIndex()\n#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(\'[<span class=\"t...\', \'[]\')\n#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(\'[]\')\n#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[]\')\n#20 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(100): yii\\base\\Module->runAction(\'<span class=\"st...\', \'[]\')\n#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\web\\Application->handleRequest(Object(humhub\\components\\Request))\n#22 /var/www/html/index.php(25): yii\\base\\Application->run()\n#23 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column \'humhub.notification.id\' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by\nThe SQL being executed was: SELECT COUNT(*) FROM (SELECT `notification`.*, count(distinct(originator_user_id)) as group_count, max(created_at) as group_created_at, min(seen) as group_seen FROM `notification` WHERE ((`seen`=0) OR (`seen` IS NULL)) AND (`user_id`=1) GROUP BY COALESCE(group_key, id), `class` ORDER BY `group_seen`, `group_created_at` DESC) `c`\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:631\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(915): yii\\db\\Schema->convertException(Object(PDOException), \'SELECT COUNT(*)...\')\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\\db\\Command->queryInternal(\'<span class=\"st...\', \'<span class=\"nu...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(401): yii\\db\\Command->queryScalar()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\\db\\Query->queryScalar(\'<span class=\"st...\', \'<span class=\"ke...\')\n#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(303): yii\\db\\ActiveQuery->queryScalar(\'<span class=\"st...\', \'<span class=\"ke...\')\n#5 /var/www/html/protected/humhub/modules/notification/controllers/ListController.php(108): yii\\db\\Query->count()\n#6 /var/www/html/protected/humhub/modules/notification/widgets/Overview.php(31): humhub\\modules\\notification\\controllers\\ListController::getUpdates()\n#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Widget.php(102): humhub\\modules\\notification\\widgets\\Overview->run()\n#8 /var/www/html/protected/humhub/widgets/BaseStack.php(90): yii\\base\\Widget::widget(\'[]\')\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Widget.php(102): humhub\\widgets\\BaseStack->run()\n#10 /var/www/html/protected/humhub/views/layouts/main.php(101): yii\\base\\Widget::widget(\'[<span class=\"s...\')\n#11 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(326): require(\'/var/www/html/p...\')\n#12 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(248): yii\\base\\View->renderPhpFile(\'<span class=\"st...\', \'[<span class=\"s...\')\n#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(393): yii\\base\\View->renderFile(\'<span class=\"st...\', \'[<span class=\"s...\', Object(humhub\\modules\\dashboard\\controllers\\DashboardController))\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(379): yii\\base\\Controller->renderContent(\'<span class=\"st...\')\n#15 /var/www/html/protected/humhub/modules/dashboard/controllers/DashboardController.php(64): yii\\base\\Controller->render(\'<span class=\"st...\', \'[<span class=\"s...\')\n#16 [internal function]: humhub\\modules\\dashboard\\controllers\\DashboardController->actionIndex()\n#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(\'[<span class=\"t...\', \'[]\')\n#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(\'[]\')\n#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[]\')\n#20 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(100): yii\\base\\Module->runAction(\'<span class=\"st...\', \'[]\')\n#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\web\\Application->handleRequest(Object(humhub\\components\\Request))\n#22 /var/www/html/index.php(25): yii\\base\\Application->run()\n#23 {main}\nAdditional Information:\nArray\n(\n    [0] => 42000\n    [1] => 1055\n    [2] => Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column \'humhub.notification.id\' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by\n)\n'),(2,4,'application',1480913139.1981,'[172.17.0.1][1][1ic730i7nqjla32627k1dlugf2]','$_SERVER = [\n    \'HTTP_HOST\' => \'humhub.local:8010\'\n    \'HTTP_CONNECTION\' => \'keep-alive\'\n    \'HTTP_CACHE_CONTROL\' => \'max-age=0\'\n    \'HTTP_UPGRADE_INSECURE_REQUESTS\' => \'1\'\n    \'HTTP_USER_AGENT\' => \'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36\'\n    \'HTTP_ACCEPT\' => \'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\'\n    \'HTTP_REFERER\' => \'http://humhub.local:8010/index.php?r=user%2Fauth%2Flogin\'\n    \'HTTP_ACCEPT_ENCODING\' => \'gzip, deflate, sdch\'\n    \'HTTP_ACCEPT_LANGUAGE\' => \'en-US,en;q=0.8,ru;q=0.6\'\n    \'HTTP_COOKIE\' => \'_csrf=7b8157ec067d1e3f32b8a5197ce8083f3fd619252e0b75dd0cf17365220c4c25a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22KlpVAzEr4rvxMnt_ugqW5XwJP7axI_0D%22%3B%7D; PHPSESSID=1ic730i7nqjla32627k1dlugf2; _identity=2b93e150e25409de084c4afbcfd6172f0a17070dc5c2ba4398357c0780bd571aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2265ae112e-80d0-4377-a6e1-2662bf529e5e%22%2C2592000%5D%22%3B%7D\'\n    \'PATH\' => \'/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\'\n    \'SERVER_SIGNATURE\' => \'<address>Apache/2.4.10 (Debian) Server at humhub.local Port 8010</address>\n\'\n    \'SERVER_SOFTWARE\' => \'Apache/2.4.10 (Debian)\'\n    \'SERVER_NAME\' => \'humhub.local\'\n    \'SERVER_ADDR\' => \'172.17.0.3\'\n    \'SERVER_PORT\' => \'8010\'\n    \'REMOTE_ADDR\' => \'172.17.0.1\'\n    \'DOCUMENT_ROOT\' => \'/var/www/html\'\n    \'REQUEST_SCHEME\' => \'http\'\n    \'CONTEXT_PREFIX\' => \'\'\n    \'CONTEXT_DOCUMENT_ROOT\' => \'/var/www/html\'\n    \'SERVER_ADMIN\' => \'[no address given]\'\n    \'SCRIPT_FILENAME\' => \'/var/www/html/index.php\'\n    \'REMOTE_PORT\' => \'56020\'\n    \'GATEWAY_INTERFACE\' => \'CGI/1.1\'\n    \'SERVER_PROTOCOL\' => \'HTTP/1.1\'\n    \'REQUEST_METHOD\' => \'GET\'\n    \'QUERY_STRING\' => \'\'\n    \'REQUEST_URI\' => \'/index.php\'\n    \'SCRIPT_NAME\' => \'/index.php\'\n    \'PHP_SELF\' => \'/index.php\'\n    \'REQUEST_TIME_FLOAT\' => 1480913139.197\n    \'REQUEST_TIME\' => 1480913139\n]');
+INSERT INTO `log` VALUES (1,1,'yii\\db\\Exception',1480913139.3513,'[172.17.0.1][1][1ic730i7nqjla32627k1dlugf2]','exception \'PDOException\' with message \'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column \'humhub.notification.id\' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:900\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\\db\\Command->queryInternal(\'<span class=\"st...\', \'<span class=\"nu...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(401): yii\\db\\Command->queryScalar()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\\db\\Query->queryScalar(\'<span class=\"st...\', \'<span class=\"ke...\')\n#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(303): yii\\db\\ActiveQuery->queryScalar(\'<span class=\"st...\', \'<span class=\"ke...\')\n#5 /var/www/html/protected/humhub/modules/notification/controllers/ListController.php(108): yii\\db\\Query->count()\n#6 /var/www/html/protected/humhub/modules/notification/widgets/Overview.php(31): humhub\\modules\\notification\\controllers\\ListController::getUpdates()\n#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Widget.php(102): humhub\\modules\\notification\\widgets\\Overview->run()\n#8 /var/www/html/protected/humhub/widgets/BaseStack.php(90): yii\\base\\Widget::widget(\'[]\')\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Widget.php(102): humhub\\widgets\\BaseStack->run()\n#10 /var/www/html/protected/humhub/views/layouts/main.php(101): yii\\base\\Widget::widget(\'[<span class=\"s...\')\n#11 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(326): require(\'/var/www/html/p...\')\n#12 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(248): yii\\base\\View->renderPhpFile(\'<span class=\"st...\', \'[<span class=\"s...\')\n#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(393): yii\\base\\View->renderFile(\'<span class=\"st...\', \'[<span class=\"s...\', Object(humhub\\modules\\dashboard\\controllers\\DashboardController))\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(379): yii\\base\\Controller->renderContent(\'<span class=\"st...\')\n#15 /var/www/html/protected/humhub/modules/dashboard/controllers/DashboardController.php(64): yii\\base\\Controller->render(\'<span class=\"st...\', \'[<span class=\"s...\')\n#16 [internal function]: humhub\\modules\\dashboard\\controllers\\DashboardController->actionIndex()\n#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(\'[<span class=\"t...\', \'[]\')\n#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(\'[]\')\n#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[]\')\n#20 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(100): yii\\base\\Module->runAction(\'<span class=\"st...\', \'[]\')\n#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\web\\Application->handleRequest(Object(humhub\\components\\Request))\n#22 /var/www/html/index.php(25): yii\\base\\Application->run()\n#23 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column \'humhub.notification.id\' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by\nThe SQL being executed was: SELECT COUNT(*) FROM (SELECT `notification`.*, count(distinct(originator_user_id)) as group_count, max(created_at) as group_created_at, min(seen) as group_seen FROM `notification` WHERE ((`seen`=0) OR (`seen` IS NULL)) AND (`user_id`=1) GROUP BY COALESCE(group_key, id), `class` ORDER BY `group_seen`, `group_created_at` DESC) `c`\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:631\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(915): yii\\db\\Schema->convertException(Object(PDOException), \'SELECT COUNT(*)...\')\n#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\\db\\Command->queryInternal(\'<span class=\"st...\', \'<span class=\"nu...\')\n#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(401): yii\\db\\Command->queryScalar()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\\db\\Query->queryScalar(\'<span class=\"st...\', \'<span class=\"ke...\')\n#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(303): yii\\db\\ActiveQuery->queryScalar(\'<span class=\"st...\', \'<span class=\"ke...\')\n#5 /var/www/html/protected/humhub/modules/notification/controllers/ListController.php(108): yii\\db\\Query->count()\n#6 /var/www/html/protected/humhub/modules/notification/widgets/Overview.php(31): humhub\\modules\\notification\\controllers\\ListController::getUpdates()\n#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Widget.php(102): humhub\\modules\\notification\\widgets\\Overview->run()\n#8 /var/www/html/protected/humhub/widgets/BaseStack.php(90): yii\\base\\Widget::widget(\'[]\')\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Widget.php(102): humhub\\widgets\\BaseStack->run()\n#10 /var/www/html/protected/humhub/views/layouts/main.php(101): yii\\base\\Widget::widget(\'[<span class=\"s...\')\n#11 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(326): require(\'/var/www/html/p...\')\n#12 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(248): yii\\base\\View->renderPhpFile(\'<span class=\"st...\', \'[<span class=\"s...\')\n#13 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(393): yii\\base\\View->renderFile(\'<span class=\"st...\', \'[<span class=\"s...\', Object(humhub\\modules\\dashboard\\controllers\\DashboardController))\n#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(379): yii\\base\\Controller->renderContent(\'<span class=\"st...\')\n#15 /var/www/html/protected/humhub/modules/dashboard/controllers/DashboardController.php(64): yii\\base\\Controller->render(\'<span class=\"st...\', \'[<span class=\"s...\')\n#16 [internal function]: humhub\\modules\\dashboard\\controllers\\DashboardController->actionIndex()\n#17 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(\'[<span class=\"t...\', \'[]\')\n#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(\'[]\')\n#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\base\\Controller->runAction(\'<span class=\"st...\', \'[]\')\n#20 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(100): yii\\base\\Module->runAction(\'<span class=\"st...\', \'[]\')\n#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\web\\Application->handleRequest(Object(humhub\\components\\Request))\n#22 /var/www/html/index.php(25): yii\\base\\Application->run()\n#23 {main}\nAdditional Information:\nArray\n(\n    [0] => 42000\n    [1] => 1055\n    [2] => Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column \'humhub.notification.id\' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by\n)\n'),(2,4,'application',1480913139.1981,'[172.17.0.1][1][1ic730i7nqjla32627k1dlugf2]','$_SERVER = [\n    \'HTTP_HOST\' => \'humhub.local:8010\'\n    \'HTTP_CONNECTION\' => \'keep-alive\'\n    \'HTTP_CACHE_CONTROL\' => \'max-age=0\'\n    \'HTTP_UPGRADE_INSECURE_REQUESTS\' => \'1\'\n    \'HTTP_USER_AGENT\' => \'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36\'\n    \'HTTP_ACCEPT\' => \'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\'\n    \'HTTP_REFERER\' => \'http://humhub.local:8010/index.php?r=user%2Fauth%2Flogin\'\n    \'HTTP_ACCEPT_ENCODING\' => \'gzip, deflate, sdch\'\n    \'HTTP_ACCEPT_LANGUAGE\' => \'en-US,en;q=0.8,ru;q=0.6\'\n    \'HTTP_COOKIE\' => \'_csrf=7b8157ec067d1e3f32b8a5197ce8083f3fd619252e0b75dd0cf17365220c4c25a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22KlpVAzEr4rvxMnt_ugqW5XwJP7axI_0D%22%3B%7D; PHPSESSID=1ic730i7nqjla32627k1dlugf2; _identity=2b93e150e25409de084c4afbcfd6172f0a17070dc5c2ba4398357c0780bd571aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2265ae112e-80d0-4377-a6e1-2662bf529e5e%22%2C2592000%5D%22%3B%7D\'\n    \'PATH\' => \'/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\'\n    \'SERVER_SIGNATURE\' => \'<address>Apache/2.4.10 (Debian) Server at humhub.local Port 8010</address>\n\'\n    \'SERVER_SOFTWARE\' => \'Apache/2.4.10 (Debian)\'\n    \'SERVER_NAME\' => \'humhub.local\'\n    \'SERVER_ADDR\' => \'172.17.0.3\'\n    \'SERVER_PORT\' => \'8010\'\n    \'REMOTE_ADDR\' => \'172.17.0.1\'\n    \'DOCUMENT_ROOT\' => \'/var/www/html\'\n    \'REQUEST_SCHEME\' => \'http\'\n    \'CONTEXT_PREFIX\' => \'\'\n    \'CONTEXT_DOCUMENT_ROOT\' => \'/var/www/html\'\n    \'SERVER_ADMIN\' => \'[no address given]\'\n    \'SCRIPT_FILENAME\' => \'/var/www/html/index.php\'\n    \'REMOTE_PORT\' => \'56020\'\n    \'GATEWAY_INTERFACE\' => \'CGI/1.1\'\n    \'SERVER_PROTOCOL\' => \'HTTP/1.1\'\n    \'REQUEST_METHOD\' => \'GET\'\n    \'QUERY_STRING\' => \'\'\n    \'REQUEST_URI\' => \'/index.php\'\n    \'SCRIPT_NAME\' => \'/index.php\'\n    \'PHP_SELF\' => \'/index.php\'\n    \'REQUEST_TIME_FLOAT\' => 1480913139.197\n    \'REQUEST_TIME\' => 1480913139\n]'),(3,1,'yii\\web\\HttpException:500',1480917116.5635,'[172.17.0.1][1][1ic730i7nqjla32627k1dlugf2]','exception \'yii\\web\\HttpException\' with message \'HumHub is already installed!\' in /var/www/html/protected/humhub/modules/installer/Module.php:59\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(142): humhub\\modules\\installer\\Module->beforeAction(Object(yii\\base\\InlineAction))\n#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\base\\Controller->runAction(\'database\', Array)\n#2 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(100): yii\\base\\Module->runAction(\'installer/setup...\', Array)\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\web\\Application->handleRequest(Object(humhub\\components\\Request))\n#4 /var/www/html/index.php(25): yii\\base\\Application->run()\n#5 {main}'),(4,4,'application',1480917116.5191,'[172.17.0.1][1][1ic730i7nqjla32627k1dlugf2]','$_GET = [\n    \'r\' => \'installer/setup/database\'\n]\n\n$_SERVER = [\n    \'HTTP_HOST\' => \'humhub.local:8010\'\n    \'HTTP_CONNECTION\' => \'keep-alive\'\n    \'HTTP_CACHE_CONTROL\' => \'max-age=0\'\n    \'HTTP_UPGRADE_INSECURE_REQUESTS\' => \'1\'\n    \'HTTP_USER_AGENT\' => \'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36\'\n    \'HTTP_ACCEPT\' => \'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\'\n    \'HTTP_ACCEPT_ENCODING\' => \'gzip, deflate, sdch\'\n    \'HTTP_ACCEPT_LANGUAGE\' => \'en-US,en;q=0.8,ru;q=0.6\'\n    \'HTTP_COOKIE\' => \'_csrf=7b8157ec067d1e3f32b8a5197ce8083f3fd619252e0b75dd0cf17365220c4c25a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22KlpVAzEr4rvxMnt_ugqW5XwJP7axI_0D%22%3B%7D; PHPSESSID=1ic730i7nqjla32627k1dlugf2; pm_getting-started-panel=expanded; _identity=2b93e150e25409de084c4afbcfd6172f0a17070dc5c2ba4398357c0780bd571aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2265ae112e-80d0-4377-a6e1-2662bf529e5e%22%2C2592000%5D%22%3B%7D\'\n    \'PATH\' => \'/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\'\n    \'SERVER_SIGNATURE\' => \'<address>Apache/2.4.10 (Debian) Server at humhub.local Port 8010</address>\n\'\n    \'SERVER_SOFTWARE\' => \'Apache/2.4.10 (Debian)\'\n    \'SERVER_NAME\' => \'humhub.local\'\n    \'SERVER_ADDR\' => \'172.17.0.3\'\n    \'SERVER_PORT\' => \'8010\'\n    \'REMOTE_ADDR\' => \'172.17.0.1\'\n    \'DOCUMENT_ROOT\' => \'/var/www/html\'\n    \'REQUEST_SCHEME\' => \'http\'\n    \'CONTEXT_PREFIX\' => \'\'\n    \'CONTEXT_DOCUMENT_ROOT\' => \'/var/www/html\'\n    \'SERVER_ADMIN\' => \'[no address given]\'\n    \'SCRIPT_FILENAME\' => \'/var/www/html/index.php\'\n    \'REMOTE_PORT\' => \'60904\'\n    \'GATEWAY_INTERFACE\' => \'CGI/1.1\'\n    \'SERVER_PROTOCOL\' => \'HTTP/1.1\'\n    \'REQUEST_METHOD\' => \'GET\'\n    \'QUERY_STRING\' => \'r=installer%2Fsetup%2Fdatabase\'\n    \'REQUEST_URI\' => \'/index.php?r=installer%2Fsetup%2Fdatabase\'\n    \'SCRIPT_NAME\' => \'/index.php\'\n    \'PHP_SELF\' => \'/index.php\'\n    \'REQUEST_TIME_FLOAT\' => 1480917116.518\n    \'REQUEST_TIME\' => 1480917116\n]'),(5,1,'yii\\db\\Exception',1480926141.0485,'[-][-][-]','exception \'PDOException\' with message \'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'SET CHARSET \'utf8\' COLLATION \'utf8_general_ci\'\' at line 1\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:844\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(844): PDOStatement->execute()\n#1 /var/www/html/protected/humhub/commands/DbController.php(13): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionFill()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'fill\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'fill\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/fill\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/fill\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'SET CHARSET \'utf8\' COLLATION \'utf8_general_ci\'\' at line 1\nThe SQL being executed was: CREATE DATABASE humhub SET CHARSET \'utf8\' COLLATION \'utf8_general_ci\'\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:631\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(854): yii\\db\\Schema->convertException(Object(PDOException), \'CREATE DATABASE...\')\n#1 /var/www/html/protected/humhub/commands/DbController.php(13): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionFill()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'fill\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'fill\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/fill\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/fill\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\nAdditional Information:\nArray\n(\n    [0] => 42000\n    [1] => 1064\n    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'SET CHARSET \'utf8\' COLLATION \'utf8_general_ci\'\' at line 1\n)\n'),(6,4,'application',1480926140.9742,'[-][-][-]','$_SERVER = [\n    \'MYSQL_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'HOSTNAME\' => \'aba059e775bf\'\n    \'MYSQL_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'TERM\' => \'xterm-256color\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_NAME\' => \'/humhub_php_1/humhub_mysql_1\'\n    \'SSH_AUTH_SOCK\' => \'/tmp/agent.sock\'\n    \'MYSQL_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'PATH\' => \'/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\'\n    \'HUMHUB_MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'PWD\' => \'/var/www/html/protected\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'SHLVL\' => \'1\'\n    \'HOME\' => \'/root\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_NAME\' => \'/humhub_php_1/mysql\'\n    \'MYSQL_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'HUMHUB_MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'HUMHUB_MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_NAME\' => \'/humhub_php_1/mysql_1\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'OLDPWD\' => \'/var/www/html\'\n    \'_\' => \'/usr/bin/php\'\n    \'PHP_SELF\' => \'yii\'\n    \'SCRIPT_NAME\' => \'yii\'\n    \'SCRIPT_FILENAME\' => \'yii\'\n    \'PATH_TRANSLATED\' => \'yii\'\n    \'DOCUMENT_ROOT\' => \'\'\n    \'REQUEST_TIME_FLOAT\' => 1480926140.9702\n    \'REQUEST_TIME\' => 1480926140\n    \'argv\' => [\n        0 => \'yii\'\n        1 => \'db/fill\'\n    ]\n    \'argc\' => 2\n]'),(7,1,'yii\\db\\Exception',1480926237.0505,'[-][-][-]','exception \'PDOException\' with message \'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'COLLATION \'utf8_general_ci\'\' at line 1\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:844\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(844): PDOStatement->execute()\n#1 /var/www/html/protected/humhub/commands/DbController.php(13): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionFill()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'fill\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'fill\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/fill\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/fill\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'COLLATION \'utf8_general_ci\'\' at line 1\nThe SQL being executed was: CREATE DATABASE humhub CHARACTER SET \'utf8\' COLLATION \'utf8_general_ci\'\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:631\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(854): yii\\db\\Schema->convertException(Object(PDOException), \'CREATE DATABASE...\')\n#1 /var/www/html/protected/humhub/commands/DbController.php(13): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionFill()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'fill\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'fill\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/fill\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/fill\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\nAdditional Information:\nArray\n(\n    [0] => 42000\n    [1] => 1064\n    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'COLLATION \'utf8_general_ci\'\' at line 1\n)\n'),(8,4,'application',1480926236.9562,'[-][-][-]','$_SERVER = [\n    \'MYSQL_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'HOSTNAME\' => \'aba059e775bf\'\n    \'MYSQL_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'TERM\' => \'xterm-256color\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_NAME\' => \'/humhub_php_1/humhub_mysql_1\'\n    \'SSH_AUTH_SOCK\' => \'/tmp/agent.sock\'\n    \'MYSQL_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'PATH\' => \'/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\'\n    \'HUMHUB_MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'PWD\' => \'/var/www/html/protected\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'SHLVL\' => \'1\'\n    \'HOME\' => \'/root\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_NAME\' => \'/humhub_php_1/mysql\'\n    \'MYSQL_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'HUMHUB_MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'HUMHUB_MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_NAME\' => \'/humhub_php_1/mysql_1\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'OLDPWD\' => \'/var/www/html\'\n    \'_\' => \'/usr/bin/php\'\n    \'PHP_SELF\' => \'yii\'\n    \'SCRIPT_NAME\' => \'yii\'\n    \'SCRIPT_FILENAME\' => \'yii\'\n    \'PATH_TRANSLATED\' => \'yii\'\n    \'DOCUMENT_ROOT\' => \'\'\n    \'REQUEST_TIME_FLOAT\' => 1480926236.9525\n    \'REQUEST_TIME\' => 1480926236\n    \'argv\' => [\n        0 => \'yii\'\n        1 => \'db/fill\'\n    ]\n    \'argc\' => 2\n]'),(9,1,'yii\\db\\Exception',1480926252.4694,'[-][-][-]','exception \'PDOException\' with message \'SQLSTATE[HY000]: General error: 1007 Can\'t create database \'humhub\'; database exists\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:844\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(844): PDOStatement->execute()\n#1 /var/www/html/protected/humhub/commands/DbController.php(13): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionFill()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'fill\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'fill\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/fill\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/fill\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[HY000]: General error: 1007 Can\'t create database \'humhub\'; database exists\nThe SQL being executed was: CREATE DATABASE humhub CHARACTER SET \'utf8\' COLLATE \'utf8_general_ci\'\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:631\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(854): yii\\db\\Schema->convertException(Object(PDOException), \'CREATE DATABASE...\')\n#1 /var/www/html/protected/humhub/commands/DbController.php(13): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionFill()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'fill\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'fill\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/fill\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/fill\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\nAdditional Information:\nArray\n(\n    [0] => HY000\n    [1] => 1007\n    [2] => Can\'t create database \'humhub\'; database exists\n)\n'),(10,4,'application',1480926252.3837,'[-][-][-]','$_SERVER = [\n    \'MYSQL_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'HOSTNAME\' => \'aba059e775bf\'\n    \'MYSQL_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'TERM\' => \'xterm-256color\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_NAME\' => \'/humhub_php_1/humhub_mysql_1\'\n    \'SSH_AUTH_SOCK\' => \'/tmp/agent.sock\'\n    \'MYSQL_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'PATH\' => \'/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\'\n    \'HUMHUB_MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'PWD\' => \'/var/www/html/protected\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'SHLVL\' => \'1\'\n    \'HOME\' => \'/root\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_NAME\' => \'/humhub_php_1/mysql\'\n    \'MYSQL_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'HUMHUB_MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'HUMHUB_MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_NAME\' => \'/humhub_php_1/mysql_1\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'OLDPWD\' => \'/var/www/html\'\n    \'_\' => \'/usr/bin/php\'\n    \'PHP_SELF\' => \'yii\'\n    \'SCRIPT_NAME\' => \'yii\'\n    \'SCRIPT_FILENAME\' => \'yii\'\n    \'PATH_TRANSLATED\' => \'yii\'\n    \'DOCUMENT_ROOT\' => \'\'\n    \'REQUEST_TIME_FLOAT\' => 1480926252.3796\n    \'REQUEST_TIME\' => 1480926252\n    \'argv\' => [\n        0 => \'yii\'\n        1 => \'db/fill\'\n    ]\n    \'argc\' => 2\n]'),(11,1,'yii\\db\\Exception',1480927060.4644,'[-][-][-]','exception \'PDOException\' with message \'SQLSTATE[HY000]: General error: 1007 Can\'t create database \'humhub\'; database exists\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:844\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(844): PDOStatement->execute()\n#1 /var/www/html/protected/humhub/commands/DbController.php(14): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionFill()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'fill\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'fill\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/fill\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/fill\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[HY000]: General error: 1007 Can\'t create database \'humhub\'; database exists\nThe SQL being executed was: CREATE DATABASE humhub CHARACTER SET \'utf8\' COLLATE \'utf8_general_ci\'\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:631\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(854): yii\\db\\Schema->convertException(Object(PDOException), \'CREATE DATABASE...\')\n#1 /var/www/html/protected/humhub/commands/DbController.php(14): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionFill()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'fill\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'fill\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/fill\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/fill\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\nAdditional Information:\nArray\n(\n    [0] => HY000\n    [1] => 1007\n    [2] => Can\'t create database \'humhub\'; database exists\n)\n'),(12,4,'application',1480927060.3892,'[-][-][-]','$_SERVER = [\n    \'MYSQL_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'HOSTNAME\' => \'aba059e775bf\'\n    \'MYSQL_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'TERM\' => \'xterm-256color\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_NAME\' => \'/humhub_php_1/humhub_mysql_1\'\n    \'SSH_AUTH_SOCK\' => \'/tmp/agent.sock\'\n    \'MYSQL_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'PATH\' => \'/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\'\n    \'HUMHUB_MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'PWD\' => \'/var/www/html/protected\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'SHLVL\' => \'1\'\n    \'HOME\' => \'/root\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_NAME\' => \'/humhub_php_1/mysql\'\n    \'MYSQL_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'HUMHUB_MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'HUMHUB_MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_NAME\' => \'/humhub_php_1/mysql_1\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'OLDPWD\' => \'/var/www/html\'\n    \'_\' => \'/usr/bin/php\'\n    \'PHP_SELF\' => \'yii\'\n    \'SCRIPT_NAME\' => \'yii\'\n    \'SCRIPT_FILENAME\' => \'yii\'\n    \'PATH_TRANSLATED\' => \'yii\'\n    \'DOCUMENT_ROOT\' => \'\'\n    \'REQUEST_TIME_FLOAT\' => 1480927060.3849\n    \'REQUEST_TIME\' => 1480927060\n    \'argv\' => [\n        0 => \'yii\'\n        1 => \'db/fill\'\n    ]\n    \'argc\' => 2\n]'),(13,1,'yii\\db\\Exception',1480927539.2798,'[-][-][-]','exception \'PDOException\' with message \'SQLSTATE[HY000]: General error: 1007 Can\'t create database \'humhub\'; database exists\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:844\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(844): PDOStatement->execute()\n#1 /var/www/html/protected/humhub/commands/DbController.php(15): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionCreate()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'create\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'create\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/create\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/create\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[HY000]: General error: 1007 Can\'t create database \'humhub\'; database exists\nThe SQL being executed was: CREATE DATABASE humhub CHARACTER SET \'utf8\' COLLATE \'utf8_general_ci\'\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:631\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(854): yii\\db\\Schema->convertException(Object(PDOException), \'CREATE DATABASE...\')\n#1 /var/www/html/protected/humhub/commands/DbController.php(15): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionCreate()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'create\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'create\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/create\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/create\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\nAdditional Information:\nArray\n(\n    [0] => HY000\n    [1] => 1007\n    [2] => Can\'t create database \'humhub\'; database exists\n)\n'),(14,4,'application',1480927539.2015,'[-][-][-]','$_SERVER = [\n    \'MYSQL_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'HOSTNAME\' => \'aba059e775bf\'\n    \'MYSQL_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'TERM\' => \'xterm-256color\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_NAME\' => \'/humhub_php_1/humhub_mysql_1\'\n    \'SSH_AUTH_SOCK\' => \'/tmp/agent.sock\'\n    \'MYSQL_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'PATH\' => \'/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\'\n    \'HUMHUB_MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'PWD\' => \'/var/www/html/protected\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'SHLVL\' => \'1\'\n    \'HOME\' => \'/root\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_NAME\' => \'/humhub_php_1/mysql\'\n    \'MYSQL_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'HUMHUB_MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'HUMHUB_MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_NAME\' => \'/humhub_php_1/mysql_1\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'OLDPWD\' => \'/\'\n    \'_\' => \'/usr/bin/php\'\n    \'PHP_SELF\' => \'yii\'\n    \'SCRIPT_NAME\' => \'yii\'\n    \'SCRIPT_FILENAME\' => \'yii\'\n    \'PATH_TRANSLATED\' => \'yii\'\n    \'DOCUMENT_ROOT\' => \'\'\n    \'REQUEST_TIME_FLOAT\' => 1480927539.1981\n    \'REQUEST_TIME\' => 1480927539\n    \'argv\' => [\n        0 => \'yii\'\n        1 => \'db/create\'\n    ]\n    \'argc\' => 2\n]'),(15,1,'yii\\db\\Exception',1480927647.6876,'[-][-][-]','exception \'PDOException\' with message \'SQLSTATE[HY000]: General error: 1007 Can\'t create database \'humhub\'; database exists\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php:844\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(844): PDOStatement->execute()\n#1 /var/www/html/protected/humhub/commands/DbController.php(15): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionCreate()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'create\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'create\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/create\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/create\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\n\nNext exception \'yii\\db\\Exception\' with message \'SQLSTATE[HY000]: General error: 1007 Can\'t create database \'humhub\'; database exists\nThe SQL being executed was: CREATE DATABASE humhub CHARACTER SET \'utf8\' COLLATE \'utf8_general_ci\'\' in /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php:631\nStack trace:\n#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(854): yii\\db\\Schema->convertException(Object(PDOException), \'CREATE DATABASE...\')\n#1 /var/www/html/protected/humhub/commands/DbController.php(15): yii\\db\\Command->execute()\n#2 [internal function]: humhub\\commands\\DbController->actionCreate()\n#3 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)\n#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\\base\\InlineAction->runWithParams(Array)\n#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\\base\\Controller->runAction(\'create\', Array)\n#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(454): yii\\console\\Controller->runAction(\'create\', Array)\n#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\\base\\Module->runAction(\'db/create\', Array)\n#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\\console\\Application->runAction(\'db/create\', Array)\n#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(375): yii\\console\\Application->handleRequest(Object(yii\\console\\Request))\n#10 /var/www/html/protected/yii(29): yii\\base\\Application->run()\n#11 {main}\nAdditional Information:\nArray\n(\n    [0] => HY000\n    [1] => 1007\n    [2] => Can\'t create database \'humhub\'; database exists\n)\n'),(16,4,'application',1480927647.6267,'[-][-][-]','$_SERVER = [\n    \'MYSQL_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'HOSTNAME\' => \'aba059e775bf\'\n    \'MYSQL_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'TERM\' => \'xterm-256color\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_NAME\' => \'/humhub_php_1/humhub_mysql_1\'\n    \'SSH_AUTH_SOCK\' => \'/tmp/agent.sock\'\n    \'MYSQL_PORT_3306_TCP_PORT\' => \'3306\'\n    \'MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'MYSQL_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_ENV_MYSQL_ROOT_PASSWORD\' => \'123\'\n    \'PATH\' => \'/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\'\n    \'HUMHUB_MYSQL_1_ENV_affinity:container\' => \'=a2e0f8a148055a3ab03929eb8f82a72ed0f903cb5626495d3cec20d203fe270e\'\n    \'PWD\' => \'/var/www/html/protected\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'HUMHUB_MYSQL_1_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_ENV_MYSQL_VERSION\' => \'8.0.0-dmr-1debian8\'\n    \'MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'SHLVL\' => \'1\'\n    \'HOME\' => \'/root\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_NAME\' => \'/humhub_php_1/mysql\'\n    \'MYSQL_PORT_3306_TCP_PROTO\' => \'tcp\'\n    \'HUMHUB_MYSQL_1_ENV_GOSU_VERSION\' => \'1.7\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_PORT\' => \'3306\'\n    \'HUMHUB_MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'MYSQL_1_NAME\' => \'/humhub_php_1/mysql_1\'\n    \'HUMHUB_MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_1_PORT_3306_TCP_ADDR\' => \'172.17.0.2\'\n    \'MYSQL_ENV_MYSQL_MAJOR\' => \'8.0\'\n    \'MYSQL_PORT\' => \'tcp://172.17.0.2:3306\'\n    \'OLDPWD\' => \'/\'\n    \'_\' => \'/usr/bin/php\'\n    \'PHP_SELF\' => \'yii\'\n    \'SCRIPT_NAME\' => \'yii\'\n    \'SCRIPT_FILENAME\' => \'yii\'\n    \'PATH_TRANSLATED\' => \'yii\'\n    \'DOCUMENT_ROOT\' => \'\'\n    \'REQUEST_TIME_FLOAT\' => 1480927647.6238\n    \'REQUEST_TIME\' => 1480927647\n    \'argv\' => [\n        0 => \'yii\'\n        1 => \'db/create\'\n    ]\n    \'argc\' => 2\n]');
 /*!40000 ALTER TABLE `log` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `message`
---
-
-DROP TABLE IF EXISTS `message`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `message` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_updated` (`updated_at`),
-  KEY `index_updated_by` (`updated_by`)
-) ENGINE=InnoDB;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `message`
---
-
-LOCK TABLES `message` WRITE;
-/*!40000 ALTER TABLE `message` DISABLE KEYS */;
-/*!40000 ALTER TABLE `message` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `message_entry`
---
-
-DROP TABLE IF EXISTS `message_entry`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `message_entry` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `message_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `file_id` int(11) DEFAULT NULL,
-  `content` text NOT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_user_id` (`user_id`),
-  KEY `index_message_id` (`message_id`)
-) ENGINE=InnoDB;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `message_entry`
---
-
-LOCK TABLES `message_entry` WRITE;
-/*!40000 ALTER TABLE `message_entry` DISABLE KEYS */;
-/*!40000 ALTER TABLE `message_entry` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -508,7 +447,7 @@ CREATE TABLE `migration` (
   `version` varchar(180) NOT NULL,
   `apply_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`version`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -517,7 +456,7 @@ CREATE TABLE `migration` (
 
 LOCK TABLES `migration` WRITE;
 /*!40000 ALTER TABLE `migration` DISABLE KEYS */;
-INSERT INTO `migration` VALUES ('m000000_000000_base',1480912737),('m131023_164513_initial',1480912739),('m131023_165411_initial',1480912739),('m131023_165507_initial',1480913044),('m131023_165625_initial',1480912739),('m131023_165755_initial',1480912739),('m131023_165835_initial',1480912740),('m131023_165921_initial',1480913048),('m131023_170033_initial',1480912740),('m131023_170135_initial',1480912740),('m131023_170159_initial',1480912740),('m131023_170253_initial',1480912740),('m131023_170339_initial',1480912740),('m131030_122743_longer_questions',1480913048),('m131203_110444_oembed',1480912740),('m131213_165552_user_optimize',1480912741),('m140226_111945_ldap',1480912741),('m140303_125031_password',1480912741),('m140304_142711_memberautoadd',1480912742),('m140321_000917_content',1480912742),('m140324_170617_membership',1480912742),('m140507_150421_create_settings_table',1480912742),('m140507_171527_create_settings_table',1480912742),('m140512_141414_i18n_profilefields',1480912742),('m140513_180317_createlogging',1480912743),('m140701_000611_profile_genderfield',1480912743),('m140701_074404_protect_default_profilefields',1480912743),('m140702_143912_notify_notification_unify',1480912743),('m140703_104527_profile_birthdayfield',1480912743),('m140704_080659_installationid',1480912743),('m140705_065525_emailing_settings',1480912743),('m140706_135210_lastlogin',1480912743),('m140829_122906_delete',1480912744),('m140830_145504_following',1480912744),('m140901_080147_indizies',1480912744),('m140901_080432_indices',1480912744),('m140901_112246_addState',1480912744),('m140901_153403_addState',1480912745),('m140901_170329_group_create_space',1480912745),('m140902_091234_session_key_length',1480912745),('m140907_140822_zip_field_to_text',1480912745),('m140930_205511_fix_default',1480912746),('m140930_205859_fix_default',1480912746),('m140930_210142_fix_default',1480912746),('m140930_210635_fix_default',1480912747),('m140930_212528_fix_default',1480912747),('m141002_093710_fix_default',1480913048),('m141004_022835_initial',1480913053),('m141015_173305_follow_notifications',1480912747),('m141019_093319_mentioning',1480912747),('m141020_162639_fix_default',1480912748),('m141020_193920_rm_alsocreated',1480912748),('m141020_193931_rm_alsoliked',1480912748),('m141021_162639_oembed_setting',1480912748),('m141022_094635_addDefaults',1480912748),('m141106_185632_log_init',1480912748),('m150204_103433_html5_notified',1480912748),('m150210_190006_user_invite_lang',1480912749),('m150302_114347_add_visibility',1480912749),('m150322_194403_remove_type_field',1480912749),('m150322_195619_allowedExt2Text',1480912749),('m150429_190600_indexes',1480913045),('m150429_223856_optimize',1480912749),('m150510_102900_update',1480912749),('m150629_220311_change',1480912749),('m150703_012735_typelength',1480912750),('m150703_024635_activityTypes',1480912750),('m150703_033650_namespace',1480912750),('m150703_130157_migrate',1480912750),('m150704_005338_namespace',1480912750),('m150704_005418_namespace',1480912750),('m150704_005434_namespace',1480912750),('m150704_005452_namespace',1480912750),('m150704_005504_namespace',1480912750),('m150705_081309_namespace',1480913053),('m150709_050451_namespace',1480913045),('m150709_151858_namespace',1480913048),('m150713_054441_timezone',1480912750),('m150714_093525_activity',1480912751),('m150714_100355_cleanup',1480912752),('m150720_174011_initial',1480913028),('m150831_061628_notifications',1480912752),('m150910_223305_fix_user_follow',1480912752),('m150924_133344_update_notification_fix',1480912752),('m150924_154635_user_invite_add_first_lastname',1480912752),('m150927_190830_create_contentcontainer',1480912752),('m150928_103711_permissions',1480912753),('m150928_134934_groups',1480912753),('m150928_140718_setColorVariables',1480912754),('m151010_124437_group_permissions',1480912754),('m151010_175000_default_visibility',1480912754),('m151013_223814_include_dashboard',1480912754),('m151022_131128_module_fix',1480912755),('m151106_090948_addColor',1480912755),('m151223_171310_fix_notifications',1480912755),('m151226_164234_authclient',1480912755),('m160125_053702_stored_filename',1480912755),('m160216_160119_initial',1480912755),('m160217_161220_addCanLeaveFlag',1480912756),('m160218_132531_close_and_anonymous_poll',1480913049),('m160220_013525_contentcontainer_id',1480912757),('m160221_222312_public_permission_change',1480912757),('m160225_180229_remove_website',1480912757),('m160227_073020_birthday_date',1480912757),('m160229_162959_multiusergroups',1480912758),('m160309_141222_longerUserName',1480912758),('m160408_100725_rename_groupadmin_to_manager',1480912758),('m160501_220850_activity_pk_int',1480912758),('m160507_202611_settings',1480912758),('m160508_005740_settings_cleanup',1480912760),('m160509_214811_spaceurl',1480912760),('m160517_132535_group',1480912760),('m160523_105732_profile_searchable',1480912760),('m160714_142827_remove_space_id',1480912760);
+INSERT INTO `migration` VALUES ('m000000_000000_base',1480912737),('m131023_164513_initial',1480912739),('m131023_165411_initial',1480912739),('m131023_165625_initial',1480912739),('m131023_165755_initial',1480912739),('m131023_165835_initial',1480912740),('m131023_170033_initial',1480912740),('m131023_170135_initial',1480912740),('m131023_170159_initial',1480912740),('m131023_170253_initial',1480912740),('m131023_170339_initial',1480912740),('m131203_110444_oembed',1480912740),('m131213_165552_user_optimize',1480912741),('m140226_111945_ldap',1480912741),('m140303_125031_password',1480912741),('m140304_142711_memberautoadd',1480912742),('m140321_000917_content',1480912742),('m140324_170617_membership',1480912742),('m140507_150421_create_settings_table',1480912742),('m140507_171527_create_settings_table',1480912742),('m140512_141414_i18n_profilefields',1480912742),('m140513_180317_createlogging',1480912743),('m140701_000611_profile_genderfield',1480912743),('m140701_074404_protect_default_profilefields',1480912743),('m140702_143912_notify_notification_unify',1480912743),('m140703_104527_profile_birthdayfield',1480912743),('m140704_080659_installationid',1480912743),('m140705_065525_emailing_settings',1480912743),('m140706_135210_lastlogin',1480912743),('m140829_122906_delete',1480912744),('m140830_145504_following',1480912744),('m140901_080147_indizies',1480912744),('m140901_080432_indices',1480912744),('m140901_112246_addState',1480912744),('m140901_153403_addState',1480912745),('m140901_170329_group_create_space',1480912745),('m140902_091234_session_key_length',1480912745),('m140907_140822_zip_field_to_text',1480912745),('m140930_205511_fix_default',1480912746),('m140930_205859_fix_default',1480912746),('m140930_210142_fix_default',1480912746),('m140930_210635_fix_default',1480912747),('m140930_212528_fix_default',1480912747),('m141015_173305_follow_notifications',1480912747),('m141019_093319_mentioning',1480912747),('m141020_162639_fix_default',1480912748),('m141020_193920_rm_alsocreated',1480912748),('m141020_193931_rm_alsoliked',1480912748),('m141021_162639_oembed_setting',1480912748),('m141022_094635_addDefaults',1480912748),('m141106_185632_log_init',1480912748),('m150204_103433_html5_notified',1480912748),('m150210_190006_user_invite_lang',1480912749),('m150302_114347_add_visibility',1480912749),('m150322_194403_remove_type_field',1480912749),('m150322_195619_allowedExt2Text',1480912749),('m150429_223856_optimize',1480912749),('m150510_102900_update',1480912749),('m150629_220311_change',1480912749),('m150703_012735_typelength',1480912750),('m150703_024635_activityTypes',1480912750),('m150703_033650_namespace',1480912750),('m150703_130157_migrate',1480912750),('m150704_005338_namespace',1480912750),('m150704_005418_namespace',1480912750),('m150704_005434_namespace',1480912750),('m150704_005452_namespace',1480912750),('m150704_005504_namespace',1480912750),('m150713_054441_timezone',1480912750),('m150714_093525_activity',1480912751),('m150714_100355_cleanup',1480912752),('m150720_174011_initial',1480913028),('m150831_061628_notifications',1480912752),('m150910_223305_fix_user_follow',1480912752),('m150924_133344_update_notification_fix',1480912752),('m150924_154635_user_invite_add_first_lastname',1480912752),('m150927_190830_create_contentcontainer',1480912752),('m150928_103711_permissions',1480912753),('m150928_134934_groups',1480912753),('m150928_140718_setColorVariables',1480912754),('m151010_124437_group_permissions',1480912754),('m151010_175000_default_visibility',1480912754),('m151013_223814_include_dashboard',1480912754),('m151022_131128_module_fix',1480912755),('m151106_090948_addColor',1480912755),('m151223_171310_fix_notifications',1480912755),('m151226_164234_authclient',1480912755),('m160125_053702_stored_filename',1480912755),('m160216_160119_initial',1480912755),('m160217_161220_addCanLeaveFlag',1480912756),('m160220_013525_contentcontainer_id',1480912757),('m160221_222312_public_permission_change',1480912757),('m160225_180229_remove_website',1480912757),('m160227_073020_birthday_date',1480912757),('m160229_162959_multiusergroups',1480912758),('m160309_141222_longerUserName',1480912758),('m160408_100725_rename_groupadmin_to_manager',1480912758),('m160501_220850_activity_pk_int',1480912758),('m160507_202611_settings',1480912758),('m160508_005740_settings_cleanup',1480912760),('m160509_214811_spaceurl',1480912760),('m160517_132535_group',1480912760),('m160523_105732_profile_searchable',1480912760),('m160714_142827_remove_space_id',1480912760);
 /*!40000 ALTER TABLE `migration` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -531,7 +470,7 @@ DROP TABLE IF EXISTS `module_enabled`;
 CREATE TABLE `module_enabled` (
   `module_id` varchar(100) NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -540,7 +479,7 @@ CREATE TABLE `module_enabled` (
 
 LOCK TABLES `module_enabled` WRITE;
 /*!40000 ALTER TABLE `module_enabled` DISABLE KEYS */;
-INSERT INTO `module_enabled` VALUES ('birthday'),('cfiles'),('mail'),('polls'),('wiki');
+INSERT INTO `module_enabled` VALUES ('cfiles');
 /*!40000 ALTER TABLE `module_enabled` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -571,7 +510,7 @@ CREATE TABLE `notification` (
   KEY `index_desktop_notified` (`desktop_notified`),
   KEY `index_desktop_emailed` (`emailed`),
   KEY `index_groupuser` (`user_id`,`class`,`group_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=7;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -580,98 +519,8 @@ CREATE TABLE `notification` (
 
 LOCK TABLES `notification` WRITE;
 /*!40000 ALTER TABLE `notification` DISABLE KEYS */;
-INSERT INTO `notification` VALUES (1,'humhub\\modules\\comment\\notifications\\NewComment',1,0,'humhub\\modules\\comment\\models\\Comment',1,1,0,'2016-12-05 04:45:27',1,2,'comment','humhub\\modules\\post\\models\\Post-2'),(2,'humhub\\modules\\comment\\notifications\\NewComment',1,0,'humhub\\modules\\comment\\models\\Comment',2,1,0,'2016-12-05 04:45:27',1,3,'comment','humhub\\modules\\post\\models\\Post-2'),(3,'humhub\\modules\\comment\\notifications\\NewComment',2,0,'humhub\\modules\\comment\\models\\Comment',2,1,0,'2016-12-05 04:45:27',0,3,'comment','humhub\\modules\\post\\models\\Post-2'),(4,'humhub\\modules\\comment\\notifications\\NewComment',1,0,'humhub\\modules\\comment\\models\\Comment',3,1,0,'2016-12-05 04:45:28',1,2,'comment','humhub\\modules\\polls\\models\\Poll-1'),(5,'humhub\\modules\\comment\\notifications\\NewComment',1,0,'humhub\\modules\\comment\\models\\Comment',4,1,0,'2016-12-05 04:45:28',1,3,'comment','humhub\\modules\\polls\\models\\Poll-1'),(6,'humhub\\modules\\comment\\notifications\\NewComment',2,0,'humhub\\modules\\comment\\models\\Comment',4,1,0,'2016-12-05 04:45:28',0,3,'comment','humhub\\modules\\polls\\models\\Poll-1');
+INSERT INTO `notification` VALUES (1,'humhub\\modules\\comment\\notifications\\NewComment',1,0,'humhub\\modules\\comment\\models\\Comment',1,1,0,'2016-12-05 04:45:27',1,2,'comment','humhub\\modules\\post\\models\\Post-2'),(2,'humhub\\modules\\comment\\notifications\\NewComment',1,0,'humhub\\modules\\comment\\models\\Comment',2,1,0,'2016-12-05 04:45:27',1,3,'comment','humhub\\modules\\post\\models\\Post-2'),(3,'humhub\\modules\\comment\\notifications\\NewComment',2,0,'humhub\\modules\\comment\\models\\Comment',2,1,0,'2016-12-05 04:45:27',0,3,'comment','humhub\\modules\\post\\models\\Post-2');
 /*!40000 ALTER TABLE `notification` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `poll`
---
-
-DROP TABLE IF EXISTS `poll`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `poll` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `question` text NOT NULL,
-  `allow_multiple` smallint(6) NOT NULL DEFAULT '0',
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  `is_random` tinyint(1) DEFAULT '0',
-  `closed` tinyint(1) DEFAULT '0',
-  `anonymous` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `poll`
---
-
-LOCK TABLES `poll` WRITE;
-/*!40000 ALTER TABLE `poll` DISABLE KEYS */;
-INSERT INTO `poll` VALUES (1,'Right now, we are in the planning stages for our next meetup and we would like to know from you, where you would like to go?',0,'2016-12-05 04:45:28',1,'2016-12-05 04:45:28',1,0,0,0);
-/*!40000 ALTER TABLE `poll` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `poll_answer`
---
-
-DROP TABLE IF EXISTS `poll_answer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `poll_answer` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `poll_id` int(11) NOT NULL,
-  `answer` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `poll_answer`
---
-
-LOCK TABLES `poll_answer` WRITE;
-/*!40000 ALTER TABLE `poll_answer` DISABLE KEYS */;
-INSERT INTO `poll_answer` VALUES (1,1,'To Daniel','2016-12-05 04:45:28',1,'2016-12-05 04:45:28',1),(2,1,'Club A Steakhouse','2016-12-05 04:45:28',1,'2016-12-05 04:45:28',1),(3,1,'Pisillo Italian Panini','2016-12-05 04:45:28',1,'2016-12-05 04:45:28',1);
-/*!40000 ALTER TABLE `poll_answer` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `poll_answer_user`
---
-
-DROP TABLE IF EXISTS `poll_answer_user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `poll_answer_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `poll_id` int(11) NOT NULL,
-  `poll_answer_id` int(11) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `poll_answer_user`
---
-
-LOCK TABLES `poll_answer_user` WRITE;
-/*!40000 ALTER TABLE `poll_answer_user` DISABLE KEYS */;
-INSERT INTO `poll_answer_user` VALUES (1,1,2,'2016-12-05 04:45:28',2,'2016-12-05 04:45:28',2),(2,1,3,'2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3);
-/*!40000 ALTER TABLE `poll_answer_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -691,7 +540,7 @@ CREATE TABLE `post` (
   `updated_at` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -743,7 +592,7 @@ CREATE TABLE `profile` (
   `url_googleplus` varchar(255) DEFAULT NULL,
   `url_twitter` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -787,7 +636,7 @@ CREATE TABLE `profile_field` (
   `searchable` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `index_profile_field_category` (`profile_field_category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -821,7 +670,7 @@ CREATE TABLE `profile_field_category` (
   `translation_category` varchar(255) DEFAULT NULL,
   `is_system` int(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -848,7 +697,7 @@ CREATE TABLE `setting` (
   `module_id` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `unique-setting` (`name`,`module_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -857,7 +706,7 @@ CREATE TABLE `setting` (
 
 LOCK TABLES `setting` WRITE;
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
-INSERT INTO `setting` VALUES (1,'oembedProviders','{\"vimeo.com\":\"http:\\/\\/vimeo.com\\/api\\/oembed.json?scheme=https&url=%url%&format=json&maxwidth=450\",\"youtube.com\":\"http:\\/\\/www.youtube.com\\/oembed?scheme=https&url=%url%&format=json&maxwidth=450\",\"youtu.be\":\"http:\\/\\/www.youtube.com\\/oembed?scheme=https&url=%url%&format=json&maxwidth=450\",\"soundcloud.com\":\"https:\\/\\/soundcloud.com\\/oembed?url=%url%&format=json&maxwidth=450\",\"slideshare.net\":\"https:\\/\\/www.slideshare.net\\/api\\/oembed\\/2?url=%url%&format=json&maxwidth=450\"}','base'),(2,'defaultVisibility','1','space'),(3,'defaultJoinPolicy','1','space'),(4,'colorDefault','#ededed','base'),(5,'colorPrimary','#708fa0','base'),(6,'colorInfo','#6fdbe8','base'),(7,'colorSuccess','#97d271','base'),(8,'colorWarning','#fdd198','base'),(9,'colorDanger','#ff8989','base'),(10,'name','MySimaLand','base'),(11,'baseUrl','http://humhub.local:8010','base'),(12,'paginationSize','10','base'),(13,'displayNameFormat','{profile.firstname} {profile.lastname}','base'),(14,'horImageScrollOnMobile','1','base'),(15,'auth.ldap.refreshUsers','1','user'),(16,'auth.needApproval','0','user'),(17,'auth.anonymousRegistration','1','user'),(18,'auth.internalUsersCanInvite','0','user'),(19,'mailer.transportType','php','base'),(20,'mailer.systemEmailAddress','social@example.com','base'),(21,'mailer.systemEmailName','MySimaLand','base'),(22,'receive_email_activities','1','activity'),(23,'receive_email_notifications','2','notification'),(24,'maxFileSize','5242880','file'),(25,'maxPreviewImageWidth','200','file'),(26,'maxPreviewImageHeight','200','file'),(27,'hideImageFileInfo','0','file'),(28,'cache.class','yii\\caching\\FileCache','base'),(29,'cache.expireTime','3600','base'),(30,'installationId','00af432af5be02b5ec631e647ecc491e','admin'),(31,'theme','HumHub','base'),(32,'spaceOrder','0','space'),(33,'enable','1','tour'),(34,'defaultLanguage','en-US','base'),(35,'enable_html5_desktop_notifications','0','notification'),(36,'useCase','intranet','base'),(37,'auth.allowGuestAccess','0','user'),(38,'enable','0','friendship'),(39,'shownDays','2','birthday'),(40,'sampleData','1','installer'),(41,'secret','e8664360-cfb1-487a-b60e-c3d8d429edf9','base'),(42,'timeZone','Asia/Yekaterinburg','base');
+INSERT INTO `setting` VALUES (1,'oembedProviders','{\"vimeo.com\":\"http:\\/\\/vimeo.com\\/api\\/oembed.json?scheme=https&url=%url%&format=json&maxwidth=450\",\"youtube.com\":\"http:\\/\\/www.youtube.com\\/oembed?scheme=https&url=%url%&format=json&maxwidth=450\",\"youtu.be\":\"http:\\/\\/www.youtube.com\\/oembed?scheme=https&url=%url%&format=json&maxwidth=450\",\"soundcloud.com\":\"https:\\/\\/soundcloud.com\\/oembed?url=%url%&format=json&maxwidth=450\",\"slideshare.net\":\"https:\\/\\/www.slideshare.net\\/api\\/oembed\\/2?url=%url%&format=json&maxwidth=450\"}','base'),(2,'defaultVisibility','1','space'),(3,'defaultJoinPolicy','1','space'),(4,'colorDefault','#ededed','base'),(5,'colorPrimary','#708fa0','base'),(6,'colorInfo','#6fdbe8','base'),(7,'colorSuccess','#97d271','base'),(8,'colorWarning','#fdd198','base'),(9,'colorDanger','#ff8989','base'),(10,'name','MySimaLand','base'),(11,'baseUrl','http://humhub.local:8010','base'),(12,'paginationSize','10','base'),(13,'displayNameFormat','{profile.firstname} {profile.lastname}','base'),(14,'horImageScrollOnMobile','1','base'),(15,'auth.ldap.refreshUsers','1','user'),(16,'auth.needApproval','0','user'),(17,'auth.anonymousRegistration','1','user'),(18,'auth.internalUsersCanInvite','0','user'),(19,'mailer.transportType','php','base'),(20,'mailer.systemEmailAddress','social@example.com','base'),(21,'mailer.systemEmailName','MySimaLand','base'),(22,'receive_email_activities','1','activity'),(23,'receive_email_notifications','2','notification'),(24,'maxFileSize','5242880','file'),(25,'maxPreviewImageWidth','200','file'),(26,'maxPreviewImageHeight','200','file'),(27,'hideImageFileInfo','0','file'),(28,'cache.class','yii\\caching\\FileCache','base'),(29,'cache.expireTime','3600','base'),(30,'installationId','00af432af5be02b5ec631e647ecc491e','admin'),(31,'theme','HumHub','base'),(32,'spaceOrder','0','space'),(33,'enable','1','tour'),(34,'defaultLanguage','en-US','base'),(35,'enable_html5_desktop_notifications','0','notification'),(36,'useCase','intranet','base'),(37,'auth.allowGuestAccess','0','user'),(38,'enable','0','friendship'),(40,'sampleData','1','installer'),(41,'secret','e8664360-cfb1-487a-b60e-c3d8d429edf9','base'),(42,'timeZone','Asia/Yekaterinburg','base');
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -891,7 +740,7 @@ CREATE TABLE `space` (
   `url` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `url-unique` (`url`)
-) ENGINE=InnoDB AUTO_INCREMENT=2;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -927,7 +776,7 @@ CREATE TABLE `space_membership` (
   `can_cancel_membership` int(11) DEFAULT '1',
   PRIMARY KEY (`space_id`,`user_id`),
   KEY `index_status` (`status`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -953,7 +802,7 @@ CREATE TABLE `space_module` (
   `space_id` int(11) NOT NULL,
   `state` int(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -962,7 +811,7 @@ CREATE TABLE `space_module` (
 
 LOCK TABLES `space_module` WRITE;
 /*!40000 ALTER TABLE `space_module` DISABLE KEYS */;
-INSERT INTO `space_module` VALUES (1,'cfiles',1,1),(3,'polls',1,1),(4,'wiki',1,1);
+INSERT INTO `space_module` VALUES (1,'cfiles',1,1);
 /*!40000 ALTER TABLE `space_module` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -977,7 +826,7 @@ CREATE TABLE `url_oembed` (
   `url` varchar(255) NOT NULL,
   `preview` text NOT NULL,
   PRIMARY KEY (`url`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1020,7 +869,7 @@ CREATE TABLE `user` (
   UNIQUE KEY `unique_username` (`username`),
   UNIQUE KEY `unique_guid` (`guid`),
   UNIQUE KEY `unique_wall_id` (`wall_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1029,7 +878,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'65ae112e-80d0-4377-a6e1-2662bf529e5e',1,1,'admin','admin@sima-land.ru','local','Administration, Support, HumHub','','2016-12-05 04:45:21','2016-12-05 04:45:21',NULL,'2016-12-05 04:45:21',NULL,'2016-12-05 04:45:39',1,NULL,1),(2,'c4e717fd-32ac-41a7-8136-5901e6f7c9fc',3,1,'david1986','david.roberts@example.com','local','Microsoft Office, Marketing, SEM, Digital Native','','2016-12-05 04:45:26','2016-12-05 04:45:26',1,'2016-12-05 04:45:26',1,NULL,1,NULL,3),(3,'215305cc-86ef-49d2-982d-5170ef1a76a7',4,1,'sara1989','sara.schuster@example.com','local','Yoga, Travel, English, German, French','','2016-12-05 04:45:27','2016-12-05 04:45:27',1,'2016-12-05 04:45:27',1,NULL,1,NULL,4);
+INSERT INTO `user` VALUES (1,'65ae112e-80d0-4377-a6e1-2662bf529e5e',1,1,'admin','admin@sima-land.ru','local','Administration, Support, HumHub','','2016-12-05 04:45:21','2016-12-05 04:45:21',NULL,'2016-12-05 04:45:21',NULL,'2016-12-05 08:54:34',1,NULL,1),(2,'c4e717fd-32ac-41a7-8136-5901e6f7c9fc',3,1,'david1986','david.roberts@example.com','local','Microsoft Office, Marketing, SEM, Digital Native','','2016-12-05 04:45:26','2016-12-05 04:45:26',1,'2016-12-05 04:45:26',1,NULL,1,NULL,3),(3,'215305cc-86ef-49d2-982d-5170ef1a76a7',4,1,'sara1989','sara.schuster@example.com','local','Yoga, Travel, English, German, French','','2016-12-05 04:45:27','2016-12-05 04:45:27',1,'2016-12-05 04:45:27',1,NULL,1,NULL,4);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1048,7 +897,7 @@ CREATE TABLE `user_auth` (
   PRIMARY KEY (`id`),
   KEY `fk_user_id` (`user_id`),
   CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1076,7 +925,7 @@ CREATE TABLE `user_follow` (
   PRIMARY KEY (`id`),
   KEY `index_user` (`user_id`),
   KEY `index_object` (`object_model`,`object_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1085,7 +934,7 @@ CREATE TABLE `user_follow` (
 
 LOCK TABLES `user_follow` WRITE;
 /*!40000 ALTER TABLE `user_follow` DISABLE KEYS */;
-INSERT INTO `user_follow` VALUES (1,'humhub\\modules\\post\\models\\Post',1,1,1),(2,'humhub\\modules\\post\\models\\Post',2,1,1),(3,'humhub\\modules\\post\\models\\Post',2,2,1),(4,'humhub\\modules\\post\\models\\Post',2,3,1),(5,'humhub\\modules\\polls\\models\\Poll',1,1,1),(6,'humhub\\modules\\polls\\models\\Poll',1,2,1),(7,'humhub\\modules\\polls\\models\\Poll',1,3,1);
+INSERT INTO `user_follow` VALUES (1,'humhub\\modules\\post\\models\\Post',1,1,1),(2,'humhub\\modules\\post\\models\\Post',2,1,1),(3,'humhub\\modules\\post\\models\\Post',2,2,1),(4,'humhub\\modules\\post\\models\\Post',2,3,1);
 /*!40000 ALTER TABLE `user_follow` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1106,7 +955,7 @@ CREATE TABLE `user_friendship` (
   KEY `fk-friend` (`friend_user_id`),
   CONSTRAINT `fk-friend` FOREIGN KEY (`friend_user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk-user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1131,7 +980,7 @@ CREATE TABLE `user_http_session` (
   `user_id` int(11) DEFAULT NULL,
   `data` longblob,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1140,7 +989,7 @@ CREATE TABLE `user_http_session` (
 
 LOCK TABLES `user_http_session` WRITE;
 /*!40000 ALTER TABLE `user_http_session` DISABLE KEYS */;
-INSERT INTO `user_http_session` VALUES ('1ic730i7nqjla32627k1dlugf2',1480918317,1,'__flash|a:0:{}__returnUrl|s:10:\"/index.php\";__id|i:1;__expire|i:1480918277;currentAuthClientId|s:5:\"local\";');
+INSERT INTO `user_http_session` VALUES ('0vjfe84nq0a8sqm7efqtje2n53',1480929607,1,'__flash|a:0:{}__id|i:1;__expire|i:1480929567;'),('fa5uc0j4qq85kruad3gufkt9m4',1480929514,1,'__flash|a:0:{}__id|i:1;__expire|i:1480929474;');
 /*!40000 ALTER TABLE `user_http_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1168,7 +1017,7 @@ CREATE TABLE `user_invite` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_email` (`email`),
   UNIQUE KEY `unique_token` (`token`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1195,7 +1044,7 @@ CREATE TABLE `user_mentioning` (
   PRIMARY KEY (`id`),
   KEY `i_user` (`user_id`),
   KEY `i_object` (`object_model`,`object_id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1205,36 +1054,6 @@ CREATE TABLE `user_mentioning` (
 LOCK TABLES `user_mentioning` WRITE;
 /*!40000 ALTER TABLE `user_mentioning` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user_mentioning` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user_message`
---
-
-DROP TABLE IF EXISTS `user_message`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_message` (
-  `message_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `is_originator` tinyint(4) DEFAULT NULL,
-  `last_viewed` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  PRIMARY KEY (`message_id`,`user_id`),
-  KEY `index_last_viewed` (`last_viewed`)
-) ENGINE=InnoDB;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_message`
---
-
-LOCK TABLES `user_message` WRITE;
-/*!40000 ALTER TABLE `user_message` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_message` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1251,7 +1070,7 @@ CREATE TABLE `user_module` (
   `state` int(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_user_module` (`user_id`,`module_id`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1279,7 +1098,7 @@ CREATE TABLE `user_password` (
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1308,7 +1127,7 @@ CREATE TABLE `wall` (
   `updated_at` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1337,7 +1156,7 @@ CREATE TABLE `wall_entry` (
   `updated_at` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1346,60 +1165,8 @@ CREATE TABLE `wall_entry` (
 
 LOCK TABLES `wall_entry` WRITE;
 /*!40000 ALTER TABLE `wall_entry` DISABLE KEYS */;
-INSERT INTO `wall_entry` VALUES (1,2,1,'2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1),(2,2,3,'2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1),(3,2,2,'2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1),(4,2,4,'2016-12-05 04:45:26',1,'2016-12-05 04:45:26',1),(5,2,5,'2016-12-05 04:45:27',1,'2016-12-05 04:45:27',1),(6,2,7,'2016-12-05 04:45:27',1,'2016-12-05 04:45:27',1),(7,2,6,'2016-12-05 04:45:27',1,'2016-12-05 04:45:28',3),(8,2,8,'2016-12-05 04:45:27',2,'2016-12-05 04:45:27',2),(9,2,9,'2016-12-05 04:45:27',3,'2016-12-05 04:45:27',3),(10,2,10,'2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3),(11,2,11,'2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3),(12,2,13,'2016-12-05 04:45:28',1,'2016-12-05 04:45:28',1),(13,2,12,'2016-12-05 04:45:28',1,'2016-12-05 04:45:28',3),(14,2,14,'2016-12-05 04:45:28',2,'2016-12-05 04:45:28',2),(15,2,15,'2016-12-05 04:45:28',2,'2016-12-05 04:45:28',2),(16,2,16,'2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3),(17,2,17,'2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3);
+INSERT INTO `wall_entry` VALUES (1,2,1,'2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1),(2,2,3,'2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1),(3,2,2,'2016-12-05 04:45:21',1,'2016-12-05 04:45:21',1),(4,2,4,'2016-12-05 04:45:26',1,'2016-12-05 04:45:26',1),(5,2,5,'2016-12-05 04:45:27',1,'2016-12-05 04:45:27',1),(6,2,7,'2016-12-05 04:45:27',1,'2016-12-05 04:45:27',1),(7,2,6,'2016-12-05 04:45:27',1,'2016-12-05 04:45:28',3),(8,2,8,'2016-12-05 04:45:27',2,'2016-12-05 04:45:27',2),(9,2,9,'2016-12-05 04:45:27',3,'2016-12-05 04:45:27',3),(10,2,10,'2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3),(11,2,11,'2016-12-05 04:45:28',3,'2016-12-05 04:45:28',3);
 /*!40000 ALTER TABLE `wall_entry` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `wiki_page`
---
-
-DROP TABLE IF EXISTS `wiki_page`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `wiki_page` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `is_home` tinyint(4) NOT NULL DEFAULT '0',
-  `admin_only` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `wiki_page`
---
-
-LOCK TABLES `wiki_page` WRITE;
-/*!40000 ALTER TABLE `wiki_page` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wiki_page` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `wiki_page_revision`
---
-
-DROP TABLE IF EXISTS `wiki_page_revision`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `wiki_page_revision` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `revision` int(11) NOT NULL,
-  `is_latest` tinyint(1) NOT NULL DEFAULT '0',
-  `wiki_page_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `content` text,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `wiki_page_revision`
---
-
-LOCK TABLES `wiki_page_revision` WRITE;
-/*!40000 ALTER TABLE `wiki_page_revision` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wiki_page_revision` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -1411,4 +1178,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-05 10:48:09
+-- Dump completed on 2016-12-05 13:59:05
