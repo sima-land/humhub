@@ -16,3 +16,25 @@ More information:
 - [Documentation & Class Reference](http://www.humhub.org/docs)
 - [Licence](http://www.humhub.org/licences)
 
+Запуск приложения из контейнера:
+```bash
+# стягиваем репозитарий
+git clone git@github.com:sima-land/humhub.git humhub
+
+cd humhub
+
+make build
+make start
+
+# стягиваем зависмости
+make composer_install
+
+# проставляем права для доступа к общим директориям
+make dirs
+
+# создаем структуру БД с демонстрационными данными
+make db_create
+```
+
+В /etc/hosts прописываем "127.0.0.1 www.humhub.local humhub.local".
+В браузере открываем страницу humhub.local:8010.
