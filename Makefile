@@ -37,4 +37,5 @@ dirs:
 
 # создает структуру БД и наполняет ее тестовыми данными
 db_create:
+	docker exec -t humhub_php_1 bash -c "mysql -h mysql -u root -p123 -e \"CREATE DATABASE IF NOT EXISTS humhub CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'\""
 	docker exec -t humhub_php_1 bash -c "cd /var/www/html/protected/; php yii db/create;"
