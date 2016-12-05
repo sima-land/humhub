@@ -2,10 +2,10 @@ php:
   build: ./
   ports:
     - "8010:80"
-#    - "9316:9306"
+    - "9316:9306"
   expose:
     - "80"
-#    - "9306"
+    - "9306"
   volumes:
     - ./:/var/www/html/
     - ./docker/vhosts/:/etc/apache2/sites-enabled/
